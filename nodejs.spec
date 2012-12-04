@@ -1,4 +1,4 @@
-%define ver  0.6.15
+%define ver  0.8.14
 %define rel  1
 %define jobs 2
 
@@ -12,7 +12,7 @@ URL:           http://nodejs.org
 
 Source0:       http://nodejs.org/dist/node-v%{version}.tar.gz
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildRequires: python >= 2.4, openssl-devel
+BuildRequires: python26 >= 2.6, openssl-devel, gcc-c++
 
 Provides: nodejs
 Obsoletes: nodejs
@@ -27,7 +27,7 @@ the architectures of many Internet applications.
 
 %build
 export JOBS=%{jobs}
-./configure --prefix=/usr
+python26 ./configure --prefix=/usr
 make
 
 %install
@@ -48,8 +48,12 @@ rm -rf %{buildroot}
 /usr/share/man/man1/node.1.gz
 /usr/lib/node
 /usr/lib/node_modules
+/usr/lib/dtrace/node.d
 
 %changelog
+* Wed Oct 31 2012 Andre von Deetzen <vondeetzen@mgail.com> 0.8.14-1
+- RPM using upstream v0.8.14
+
 * Thu Apr 12 2012 Vibol Hou <vibol@hou.cc> 0.6.15-1
 - RPM using upstream v0.6.15
 
