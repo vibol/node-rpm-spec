@@ -12,7 +12,7 @@ URL:           http://nodejs.org
 
 Source0:       http://nodejs.org/dist/node-v%{version}.tar.gz
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildRequires: python26 >= 2.6, openssl-devel, gcc-c++
+BuildRequires: python >= 2.6, openssl-devel, gcc-c++
 
 Provides: nodejs
 Obsoletes: nodejs
@@ -27,7 +27,7 @@ the architectures of many Internet applications.
 
 %build
 export JOBS=%{jobs}
-python26 ./configure --prefix=/usr
+python ./configure --prefix=/usr
 make
 
 %install
