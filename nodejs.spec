@@ -51,7 +51,7 @@ rm -rf %{buildroot}
 /usr/lib/dtrace/node.d
 
 %changelog
-* Tue January 22 2013 Joseph Hajduk <joseph@solidys.com> 0.8.18-1
+* Tue Jan 22 2013 Joseph Hajduk <joseph@solidys.com> 0.8.18-1
 - RPM using upstream v0.8.18
 
 * Wed Oct 31 2012 Andre von Deetzen <vondeetzen@mgail.com> 0.8.14-1
